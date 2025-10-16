@@ -38,18 +38,77 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+full adder
+
+<img width="516" height="441" alt="image" src="https://github.com/user-attachments/assets/93be263e-a431-486c-9d13-b02b86b7dcf9" />
+
+full subtractor
+
+<img width="496" height="327" alt="image" src="https://github.com/user-attachments/assets/45308c5a-bd58-45b2-bcbe-7cfd35aa0888" />
+
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+ Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+ 
+i)full adder
+
+module fa(a,b,cin,sum,carry);
+
+input a,b,cin;
+
+output sum,carry;
+
+assign sum=( (a ^ b)^cin);
+
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+
+endmodule
+
+ii)full subrtractor
+
+module fs(a,b,bin,difference,borrow);
+
+input a,b,bin;
+
+output difference,borrow;
+
+assign difference= ( (a ^ b)^bin);
+
+assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+
 
 **RTL Schematic**
 
+ full adder
+
+ <img width="605" height="249" alt="image" src="https://github.com/user-attachments/assets/c3869092-a0de-4c1a-a6d6-04d8d7c681cb" />
+
+full subtractor
+
+<img width="609" height="262" alt="image" src="https://github.com/user-attachments/assets/fd352e2a-48e3-4371-99c8-b240e91396b1" />
+
 **Output Timing Waveform**
+
+full adder
+
+<img width="1059" height="466" alt="image" src="https://github.com/user-attachments/assets/bf7d5da3-16a1-4af2-a981-e149b717a31e" />
+
+full subtractor
+
+<img width="1073" height="559" alt="image" src="https://github.com/user-attachments/assets/faa46ade-ce39-48ff-aa98-33db538eb4db" />
 
 **Result:**
 
